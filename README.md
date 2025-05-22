@@ -1,1 +1,56 @@
 # homework_2_6
+`taxi2_db=# \timing
+SELETiming is on.
+taxi2_db=# SELECT payment_type, round(sum(tips)/sum(tips+fare)*100) tips_persent, count(*)
+M taxi_trips
+group by payment_type
+otaxi2_db-# FROM taxi_trips
+taxi2_db-# group by payment_type
+taxi2_db-# order by 3 desc;
+ payment_type | tips_persent |  count
+--------------+--------------+----------
+ Cash         |            0 | 17231871
+ Credit Card  |           18 |  9224956
+ Unknown      |            0 |   103869
+ Prcard       |            1 |    86053
+ Mobile       |           17 |    61256
+ No Charge    |            0 |    26294
+ Pcard        |            2 |    13575
+ Dispute      |            0 |     5596
+ Split        |           19 |      180
+ Way2ride     |           14 |       27
+ Prepaid      |            0 |        6
+(11 rows)
+
+Time: 26506.593 ms (00:26.507)`
+![image](https://github.com/user-attachments/assets/42100fb9-53d3-483e-85ac-544224bc5012)
+Видим что запрос  выполняеется  26.507 секунды !!!
+Решение:Cоздания индекса по колонке payment_type
+`taxi2_db=# CREATE INDEX idx_payment_type ON taxi_trips(payment_type);`
+![image](https://github.com/user-attachments/assets/d1e6da7e-59d6-48c9-b0d6-795ba8c87dc1)
+`taxi2_db=# SELECT payment_type,
+    rountaxi2_db-#        round(sum(tips)/sum(tips+fare)*100) AS tips_percent,
+    countaxi2_db-#        count(*)
+FROMtaxi2_db-# FROM taxi_trips
+taxi2_db-# GROUP BY payment_type
+taxi2_db-# ORDER BY tips_percent DESC;
+ payment_type | tips_percent |  count
+--------------+--------------+----------
+ Split        |           19 |      180
+ Credit Card  |           18 |  9224956
+ Mobile       |           17 |    61256
+ Way2ride     |           14 |       27
+ Pcard        |            2 |    13575
+ Prcard       |            1 |    86053
+ Cash         |            0 | 17231871
+ Prepaid      |            0 |        6
+ No Charge    |            0 |    26294
+ Unknown      |            0 |   103869
+ Dispute      |            0 |     5596
+(11 rows)
+
+Time: 3718.340 ms (00:03.718)`
+Вывод:Время выполнения запроса уменьшилось примерно в 7 раз.Создание индекса по колонке payment_type значительно повысило производительность запроса. Это классический пример того, как индекс помогает ускорить операции группировки и сортировки на больших объемах данных
+
+
+
