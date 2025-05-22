@@ -1,12 +1,11 @@
 # homework_2_6
-`taxi2_db=# \timing
-SELETiming is on.
-taxi2_db=# SELECT payment_type, round(sum(tips)/sum(tips+fare)*100) tips_persent, count(*)
-M taxi_trips
-group by payment_type
-otaxi2_db-# FROM taxi_trips
-taxi2_db-# group by payment_type
-taxi2_db-# order by 3 desc;
+`\timing`
+
+`SELECT payment_type, round(sum(tips)/sum(tips+fare)*100) AS tips_percent, count(*)`
+`FROM taxi_trips`
+`GROUP BY payment_type`
+`ORDER BY tips_percent DESC;`
+
  payment_type | tips_persent |  count
 --------------+--------------+----------
  Cash         |            0 | 17231871
@@ -22,7 +21,7 @@ taxi2_db-# order by 3 desc;
  Prepaid      |            0 |        6
 (11 rows)
 
-Time: 26506.593 ms (00:26.507)`
+Time: 26506.593 ms (00:26.507)```
 ![image](https://github.com/user-attachments/assets/42100fb9-53d3-483e-85ac-544224bc5012)
 Видим что запрос  выполняеется  26.507 секунды !!!
 Решение:Cоздания индекса по колонке payment_type
