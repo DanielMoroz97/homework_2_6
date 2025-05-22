@@ -41,7 +41,9 @@
 `FROMtaxi2_db-# FROM taxi_trips`
 `taxi2_db-# GROUP BY payment_type`
 `taxi2_db-# ORDER BY tips_percent DESC;`
+
 Результат выполнения:
+
  payment_type | tips_percent |  count
 --------------+--------------+----------
  Split        |           19 |      180
