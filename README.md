@@ -35,12 +35,12 @@
 ![image](https://github.com/user-attachments/assets/d1e6da7e-59d6-48c9-b0d6-795ba8c87dc1)
 
 
-`taxi2_db=# SELECT payment_type,`
-`    rountaxi2_db-#        round(sum(tips)/sum(tips+fare)*100) AS tips_percent,`
-`    countaxi2_db-#        count(*)`
-`FROMtaxi2_db-# FROM taxi_trips`
-`taxi2_db-# GROUP BY payment_type`
-`taxi2_db-# ORDER BY tips_percent DESC;`
+`taxi2_db=# SELECT payment_type,
+rountaxi2_db-#        round(sum(tips)/sum(tips+fare)*100) AS tips_percent,
+countaxi2_db-#        count(*)
+FROMtaxi2_db-# FROM taxi_trips
+taxi2_db-# GROUP BY payment_type
+taxi2_db-# ORDER BY tips_percent DESC;`
 
 Результат выполнения:
 
