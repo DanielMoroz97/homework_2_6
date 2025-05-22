@@ -44,20 +44,20 @@
 
 Результат выполнения:
 
-| payment_type | tips_percent |  count
-| --------------+--------------+----------
-| Split        |           19 |      180
-| Credit Card  |           18 |  9224956
-| Mobile       |           17 |    61256
-| Way2ride     |           14 |       27
-| Pcard        |            2 |    13575
-| Prcard       |            1 |    86053
-| Cash         |            0 | 17231871
-| Prepaid      |            0 |        6
-| No Charge    |            0 |    26294
-| Unknown      |            0 |   103869
-| Dispute      |            0 |     5596
- (11 rows)
+| payment_type | tips_percent | count |
+| -------------- | -------------- | ------- |
+| Split | 19 | 180 |
+| Credit Card | 18 | 9,224,956 |
+| Mobile | 17 | 61,256 |
+| Way2ride | 14 | 27 |
+| Pcard | 2 | 13,575 |
+| Prcard | 1 | 86,053 |
+| Cash | 0 | 17,231,871 |
+| Prepaid | 0 | 6 |
+| No Charge | 0 | 26,294 |
+| Unknown | 0 | 103,869 |
+| Dispute | 0 | 5,596 |
+
 
 Время выполнения: 
 Time: 3718.340 ms (00:03.718)
